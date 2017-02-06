@@ -5,11 +5,9 @@ import spock.lang.Specification
 class ApplicationTest extends Specification {
     def "application should start"() {
         given:
-        def mainMock = Mock(Application)
+        GroovyMock(Application, global: true)
 
-        when:
-
-        then:
-        Application.main()
+        expect:
+        Application.main(null)
     }
 }
